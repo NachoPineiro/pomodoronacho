@@ -2,30 +2,29 @@ import { Pressable, Text, View, StyleSheet } from "react-native";
 import playSonido from "../utility/playsound";
 
 export default function Boton(props) {
-
-  const { run, setRun } = props;
- 
+  const { run, setRun, colorBoton } = props;
   const sonido = require("../../assets/sound/click.mp3");
-
-
 
   const cambiarEstado = () => {
     setRun(!run);
-   
     playSonido(sonido);
   };
 
   return (
-    <View>
-      <Pressable onPress={() => cambiarEstado()}>
-        {({ pressed }) => (
-          <Text style={[styles.boton, { opacity: pressed ? 0.5 : 1 }]}>
-            {
-             
-              run ? "Parar" : "Iniciar"
-            }
-          </Text>
-        )}
+    <View style={{ marginTop: 20 }}>
+      <Pressable
+        onPress={cambiarEstado}
+        style={({ pressed }) => [
+          styles.boton,
+          {
+            backgroundColor: colorBoton || "#ccc",
+            opacity: pressed ? 0.8 : 1,
+          },
+        ]}
+      >
+        <Text style={styles.textoBoton}>
+          {run ? "Parar" : "Iniciar"}
+        </Text>
       </Pressable>
     </View>
   );
@@ -37,13 +36,14 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
     borderWidth: 1,
     padding: 5,
     borderRadius: 20,
-    backgroundColor: "white",
+  },
+  textoBoton: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "#000", // Texto negro para que contraste
     textAlign: "center",
   },
 });

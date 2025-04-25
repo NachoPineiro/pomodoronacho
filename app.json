@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nachopineiro.PomodoroG1"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "17d4cee0-bcda-4ae5-8f50-a9b200ef8583"
+      }
+    },
+    "owner": "nachopineiro"
   }
 }
