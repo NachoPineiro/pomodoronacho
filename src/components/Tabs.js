@@ -1,40 +1,64 @@
-import { Pressable, View, Text, StyleSheet } from "react-native";
+import React from "react";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function Tabs(props) {
-  const { seleccion, setSeleccion, setTiempo } = props;
-  const opciones = ["Pomodoro", "Descanso cortito", "Descanso "];
-
-  //logica del componente
-  function cambiarSeleccion(index) {
-    setSeleccion(index);
-  }
+const Tabs = ({ seleccion, setSeleccion, setTiempo }) => {
+  // Opciones del temporizador
+  const opciones = [
+    { label: "Pomodoro", tiempo: 25 * 60 },
+    { label: "Descanso Corto", tiempo: 5 * 60 },
+    { label: "Descanso Largo", tiempo: 15 * 60 },
+  ];
 
   return (
-    <View style={{ flexDirection: "row" }}>
+    <View style={styles.container}>
       {opciones.map((opcion, index) => (
-        <Pressable
+        <TouchableOpacity
           key={index}
-          style={({ pressed }) => [
+          style={[
             styles.boton,
-            { opacity: pressed ? 0.5 : 1 },
+            seleccion === index && styles.botonActivo,
           ]}
-          onPress={() => cambiarSeleccion(index)}
+          onPress={() => {
+            setSeleccion(index);
+            setTiempo(opcion.tiempo);
+          }}
         >
-          <Text>{opcion}</Text>
-        </Pressable>
+          <Text
+            style={[
+              styles.texto,
+              seleccion === index && styles.textoActivo,
+            ]}
+          >
+            {opcion.label}
+          </Text>
+        </TouchableOpacity>
       ))}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 20,
+  },
   boton: {
-    borderWidth: 3,
-    width: "33%",
-    padding: 8,
-    borderRadius: 10,
-    borderColor: "white",
-    alignItems: "center",
-    marginTop: 15,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 20,
+    backgroundColor: "#ffffff55",
+  },
+  botonActivo: {
+    backgroundColor: "#ffffff",
+  },
+  texto: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  textoActivo: {
+    color: "#000",
   },
 });
+
+export default Tabs;

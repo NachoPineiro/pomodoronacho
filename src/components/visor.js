@@ -1,21 +1,30 @@
-import { View, StyleSheet, Text } from "react-native";
+import React from "react";
+import { Text, View, StyleSheet } from "react-native";
 
-export default function Visor({ tiempo }) {
+const Visor = ({ tiempo }) => {
+  const formatearTiempo = (tiempo) => {
+    const minutos = Math.floor(tiempo / 60);
+    const segundos = tiempo % 60;
+    return `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 40 }}>{tiempo}</Text>
+      <Text style={styles.tiempoTexto}>{formatearTiempo(tiempo)}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
     alignItems: "center",
-    flex: 0.8,
-    borderWidth: 3,
-    marginTop: 30,
-    borderRadius: 30,
-    backgroundColor: "orange",
+    marginVertical: 20,
+  },
+  tiempoTexto: {
+    fontSize: 60,
+    fontWeight: "bold",
+    color: "#fff",
   },
 });
+
+export default Visor;

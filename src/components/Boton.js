@@ -1,5 +1,5 @@
 import { Pressable, Text, View, StyleSheet } from "react-native";
-import playSonido from "../utility/playSound";
+import playSonido from "../utility/playsound";
 
 export default function Boton(props) {
 
