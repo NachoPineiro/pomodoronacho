@@ -4,11 +4,11 @@
     "slug": "PomodoroNacho",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logovalo.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-logovalo.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-logovalo.png",
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.nachopineiro.PomodoroNacho"
@@ -25,11 +25,11 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "owner": "nachopineiro",
     "extra": {
       "eas": {
-        "projectId": "17d4cee0-bcda-4ae5-8f50-a9b200ef8583"
+        "projectId": "dc1fc5c3-54c4-43e0-8596-78a6a1976e46"
       }
-    },
-    "owner": "nachopineiro"
+    }
   }
 }
