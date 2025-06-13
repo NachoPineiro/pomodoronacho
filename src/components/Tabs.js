@@ -2,7 +2,6 @@ import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
 const Tabs = ({ seleccion, setSeleccion, setTiempo }) => {
-  // Opciones del temporizador
   const opciones = [
     { label: "Pomodoro", tiempo: 25 * 60 },
     { label: "Descanso Corto", tiempo: 5 * 60 },
@@ -14,21 +13,13 @@ const Tabs = ({ seleccion, setSeleccion, setTiempo }) => {
       {opciones.map((opcion, index) => (
         <TouchableOpacity
           key={index}
-          style={[
-            styles.boton,
-            seleccion === index && styles.botonActivo,
-          ]}
+          style={[styles.boton, seleccion === index && styles.botonActivo]}
           onPress={() => {
             setSeleccion(index);
             setTiempo(opcion.tiempo);
           }}
         >
-          <Text
-            style={[
-              styles.texto,
-              seleccion === index && styles.textoActivo,
-            ]}
-          >
+          <Text style={[styles.texto, seleccion === index && styles.textoActivo]}>
             {opcion.label}
           </Text>
         </TouchableOpacity>

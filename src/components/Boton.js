@@ -22,9 +22,7 @@ export default function Boton(props) {
           },
         ]}
       >
-        <Text style={styles.textoBoton}>
-          {run ? "Parar" : "Iniciar"}
-        </Text>
+        <Text style={styles.textoBoton}>{run ? "Parar" : "Iniciar"}</Text>
       </Pressable>
     </View>
   );
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
   textoBoton: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#000", // Texto negro para que contraste
+    color: "#000",
     textAlign: "center",
   },
 });
