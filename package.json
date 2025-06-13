@@ -4,21 +4,23 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
     "eas-cli": "^16.3.3",
-    "expo": "~52.0.43",
-    "expo-av": "~15.0.2",
-    "expo-notifications": "~0.29.14",
-    "expo-status-bar": "~2.0.1",
-    "react": "18.3.1",
-    "react-native": "0.76.9"
+    "expo": "^53.0.11",
+    "expo-av": "~15.1.6",
+    "expo-background-fetch": "~13.1.5",
+    "expo-notifications": "^0.31.3",
+    "expo-status-bar": "~2.2.3",
+    "expo-task-manager": "~13.1.5",
+    "react": "^19.0.0",
+    "react-native": "^0.79.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.26.0"
   },
   "private": true
 }

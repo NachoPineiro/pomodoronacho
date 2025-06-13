@@ -5,7 +5,7 @@ const Visor = ({ tiempo }) => {
   const formatearTiempo = (tiempo) => {
     const minutos = Math.floor(tiempo / 60);
     const segundos = tiempo % 60;
-    return `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+    return `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
   };
 
   return (
